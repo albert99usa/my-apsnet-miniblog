@@ -1,0 +1,43 @@
+﻿@model Blog.ViewModel.ModelsCombined
+
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<div>
+    <div class="text-center">
+        <h1 class="display-4">A Case Against The NHS</h1>
+    </div>
+
+    <h5>James Steel</h5>
+    <span>20/11/2016</span>
+    <br />
+    <br />
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat nisl pretium fusce id velit ut tortor pretium viverra. Morbi tempus iaculis urna id volutpat lacus. Urna et pharetra pharetra massa massa ultricies mi. Ac turpis egestas integer eget aliquet nibh praesent. Ut pharetra sit amet aliquam id diam maecenas. Pulvinar mattis nunc sed blandit libero volutpat. Enim facilisis gravida neque convallis a. Imperdiet massa tincidunt nunc pulvinar sapien et. Fermentum leo vel orci porta non pulvinar. Sed augue lacus viverra vitae congue eu consequat ac. Vitae auctor eu augue ut lectus arcu bibendum at. Orci eu lobortis elementum nibh tellus molestie nunc. Neque laoreet suspendisse interdum consectetur libero. Auctor eu augue ut lectus. Urna molestie at elementum eu facilisis sed odio morbi quis.
+
+    Convallis aenean et tortor at risus viverra adipiscing. Integer vitae justo eget magna fermentum iaculis. In dictum non consectetur a erat nam at lectus. Tincidunt lobortis feugiat vivamus at augue. Velit euismod in pellentesque massa. Eget lorem dolor sed viverra ipsum. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Tortor posuere ac ut consequat semper. Id neque aliquam vestibulum morbi blandit cursus. Quisque non tellus orci ac auctor augue mauris augue. Vulputate dignissim suspendisse in est ante. Massa massa ultricies mi quis hendrerit dolor magna. Netus et malesuada fames ac turpis egestas maecenas. Non pulvinar neque laoreet suspendisse.
+    <hr />
+</div>
+
+<h4>Comments</h4>
+
+@foreach (var Item in Model.IEnumerableComment)
+{
+    if (Item.ArticleTitle == "A Case Against The NHS")
+    {
+        <div class="comment-list">
+            <label><strong>@Item.Name</strong></label>
+            <p>@Item.Body</p>
+            <br />
+        </div>
+    }
+}
+
+<hr />
+
+<partial name="~/Views/Articles/_Comment.cshtml" />
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

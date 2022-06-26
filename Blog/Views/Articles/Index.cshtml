@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Blog.Models.Article>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Welcome</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BodyBrief)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a href="@item.URL">@Html.DisplayFor(modelItem => item.Title)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BodyBrief)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
